@@ -1,0 +1,18 @@
+syntax = "proto3";
+ 
+package user;
+ 
+message UserProfile {
+    string user_id = 1;
+    string name = 2;
+ 
+    oneof contact_info {
+        string email = 3;
+        string phone_number = 4;
+        string address = 5;
+    }
+}
+ 
+service UserService {
+    rpc CreateUser(UserProfile) returns (UserProfile);
+}

@@ -1,0 +1,68 @@
+{
+  "options": {
+    "syntax": "proto3",
+    "go_package": "foo.example.com/foo/apis/network/api-groups/core/hub/services"
+  },
+  "nested": {
+    "Account": {
+      "options": {
+        "(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_tag).description": "Account Model:\n\n<SchemaDefinition schemaRef=#/components/schemas/modelAccount />"
+      },
+      "methods": {
+        "ListAccounts": {
+          "requestType": "ListAccountsRequest",
+          "responseType": "ListAccountsResponse",
+          "options": {
+            "(google.api.http).get": "/{customer_name=customers/*}/accounts",
+            "(commons.genopenapi.request_header).name": "X-Tenant-Id",
+            "(commons.genopenapi.request_header).description": "Unique tenant identifier. Deprecated - use `tenant` header instead. Example: '1'.",
+            "(commons.genopenapi.request_header).type": "integer",
+            "(commons.genopenapi.request_header).deprecated": true
+          },
+          "parsedOptions": [
+            {
+              "(google.api.http)": {
+                "get": "/{customer_name=customers/*}/accounts"
+              }
+            },
+            {
+              "(commons.genopenapi.request_header)": {
+                "name": "X-Tenant-Id",
+                "description": "Unique tenant identifier. Deprecated - use `tenant` header instead. Example: '1'.",
+                "type": "integer",
+                "deprecated": true
+              }
+            }
+          ]
+        }
+      },
+      "nested": {
+        "ListAccountsRequest": {
+          "fields": {
+            "customer_name": {
+              "type": "string",
+              "id": 4
+            },
+            "sort": {
+              "type": "string",
+              "id": 5
+            }
+          }
+        },
+        "ListAccountsResponse": {
+          "fields": {
+            "accounts": {
+              "rule": "repeated",
+              "type": "model.Account",
+              "id": 1
+            },
+            "total_count": {
+              "type": "int64",
+              "id": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}

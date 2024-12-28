@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option syntax = "proto3";
+option go_package = "foo.example.com/foo/apis/network/api-groups/core/hub/services";
+service Account {
+    rpc ListAccounts (ListAccountsRequest) returns (ListAccountsResponse);
+
+    message ListAccountsRequest {
+
+        string customer_name = 4;
+        string sort = 5;
+    }
+
+    message ListAccountsResponse {
+
+        repeated model.Account accounts = 1;
+        int64 total_count = 2;
+    }
+}

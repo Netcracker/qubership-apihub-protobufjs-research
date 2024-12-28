@@ -1,0 +1,20 @@
+syntax = "proto3";
+ 
+package example;
+ 
+import "user.proto";
+import "google/protobuf/timestamp.proto";
+ 
+service UserService {
+    rpc GetUser(UserRequest) returns (UserResponse);
+}
+ 
+message UserRequest {
+    string user_id = 1;
+    google.protobuf.Timestamp req_time = 2;
+}
+ 
+message UserResponse {
+    User user = 1;
+    google.protobuf.Timestamp to_time = 2;
+}

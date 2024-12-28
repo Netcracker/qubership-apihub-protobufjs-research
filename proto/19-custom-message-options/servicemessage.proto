@@ -1,0 +1,23 @@
+syntax = "proto3";
+ 
+package example;
+ 
+import "custom_options.proto";
+ 
+option java_package = "com.example.protobuf";
+option java_outer_classname = "ExampleProto";
+ 
+service ExampleService {
+    rpc GetExample (ExampleRequest) returns (ExampleResponse);
+}
+ 
+message ExampleRequest {
+    option (custom_options.custom_option) = { description: "Request message for getting example", priority: 1 };
+ 
+    string name = 1;
+    int32 id = 2;
+}
+ 
+message ExampleResponse {
+    string message = 1;
+}

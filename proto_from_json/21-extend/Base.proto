@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package user;
+
+message User {
+
+    string user_id = 1;
+    string name = 2;
+}
+
+message Status {
+
+    Code code = 1;
+
+    enum Code {
+
+        OK = 0;
+        NOT_FOUND = 1;
+        ERROR = 2;
+    }
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+ 
+import "google/protobuf/descriptor.proto";
+ 
+package com.example.foo.api.commons.apibuilder;
+ 
+option go_package = "foo.example.com/foo/apis/network/commons/apibuilder";
+ 
+extend google.protobuf.MessageOptions {
+  Internal internal_message = 7755506;
+}
+ 
+extend google.protobuf.FieldOptions {
+  Internal internal_field = 7755507;
+}
+ 
+extend google.protobuf.ServiceOptions {
+  Internal internal_service = 7755508;
+}
+ 
+extend google.protobuf.MethodOptions {
+   Internal internal_method = 7755509;
+}
+ 
+extend google.protobuf.EnumValueOptions {
+  Internal internal_enum_value = 7755510;
+}
+ 
+message Internal {
+  string comment = 1;
+}

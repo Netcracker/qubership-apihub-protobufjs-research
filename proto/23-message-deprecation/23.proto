@@ -1,0 +1,15 @@
+syntax = "proto3";
+ 
+package chat;
+ 
+service ChatService {
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+  rpc DeprecatedChat (stream ChatMessage) returns (stream ChatMessage) {
+    option deprecated = true;
+  }
+}
+ 
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}

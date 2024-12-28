@@ -1,0 +1,21 @@
+syntax = "proto3";
+import "apis/commons/apibuilder/internal.proto";
+ 
+package com.example.foo.api.testing;
+ 
+message TestMessage {
+ 
+  reserved "foo";
+  reserved 10 to 11;
+  reserved 25;
+ 
+  string name = 1;
+ 
+  string some_description = 2;
+ }
+message InternalDescription {
+  option (commons.apibuilder.internal_message) = {
+    comment: "internal message type"
+  };
+  string description = 1;
+}

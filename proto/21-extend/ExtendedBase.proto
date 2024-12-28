@@ -1,0 +1,19 @@
+syntax = "proto3";
+ 
+package user;
+ 
+import "base.proto";
+ 
+extend User {
+    string email = 100;  // Adding an email field
+    string phone_number = 101; // Adding a phone number field
+}
+ 
+message ExampleResponse {
+    string message = 1;
+    Status status = 2;
+}
+ 
+service ExampleService {
+    rpc GetUser (User) returns (ExampleResponse);
+}

@@ -1,0 +1,49 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "UserService": {
+      "methods": {
+        "GetUserRole": {
+          "requestType": "SearchRequest",
+          "responseType": "SearchResponse"
+        }
+      }
+    },
+    "SearchRequest": {
+      "fields": {
+        "user_id": {
+          "type": "string",
+          "id": 1
+        }
+      }
+    },
+    "SearchResponse": {
+      "fields": {
+        "results": {
+          "rule": "repeated",
+          "type": "Result",
+          "id": 1
+        }
+      }
+    },
+    "Result": {
+      "fields": {
+        "url": {
+          "type": "string",
+          "id": 1
+        },
+        "title": {
+          "type": "string",
+          "id": 2
+        },
+        "snippets": {
+          "rule": "repeated",
+          "type": "string",
+          "id": 3
+        }
+      }
+    }
+  }
+}

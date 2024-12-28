@@ -1,0 +1,50 @@
+syntax = "proto3";
+ 
+package com.example.foo.api.core.hub.services;
+ 
+import "google/api/annotations.proto";
+option go_package = "foo.example.com/foo/apis/network/api-groups/core/hub/services";
+ 
+message BatchApplyRequest {
+  repeated services.ApplyCustomerRequest customers = 1;
+  repeated services.ApplyAddressRequest addresses = 2;
+  repeated services.ApplyContactRequest contacts = 3;
+}
+message TxResponse {
+   message Item {
+    oneof response {
+      model.Customer update_customer = 2;
+      model.Address apply_address = 3;
+      }
+    }
+     repeated Item responses = 1;
+  }
+service BatchApply {
+rpc Apply(BatchApplyRequest) returns (TxResponse) {
+    option (google.api.http) = {
+      post: "/batch:apply"
+      body: "*"
+    };
+ 
+    option (commons.genopenapi.request_header) = {
+      name: "X-Tenant-Id"
+      description: "Unique tenant identifier. Deprecated - use `tenant` header instead. Example: '1'."
+      type: "integer"
+      deprecated: true
+    };
+ 
+    option (commons.genopenapi.request_header) = {
+      name: "Tenant"
+      description: "Unique tenant identifier. Example: 'tenant-1'."
+      type: "string"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      security: {
+        security_requirement: {
+          key: "bearer"
+          value: { scope: "" }
+        }
+      }
+    };
+  }
+}

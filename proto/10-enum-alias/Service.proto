@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+package example;
+ 
+import "enums.proto";
+ 
+service UserService {
+    rpc GetUserRole(UserRequest) returns (UserResponse);
+}
+ 
+message UserRequest {
+    string user_id = 1;
+}
+ 
+message UserResponse {
+    UserRoleAlias role = 1;
+}

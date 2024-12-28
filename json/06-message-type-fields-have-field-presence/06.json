@@ -1,0 +1,36 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "Message1": {
+      "fields": {}
+    },
+    "Message2": {
+      "fields": {
+        "foo": {
+          "type": "Message1",
+          "id": 1
+        }
+      }
+    },
+    "Message3": {
+      "oneofs": {
+        "_bar": {
+          "oneof": [
+            "bar"
+          ]
+        }
+      },
+      "fields": {
+        "bar": {
+          "type": "Message1",
+          "id": 1,
+          "options": {
+            "proto3_optional": true
+          }
+        }
+      }
+    }
+  }
+}

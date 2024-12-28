@@ -1,0 +1,40 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "user": {
+      "nested": {
+        "User": {
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            },
+            "name": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "Status": {
+          "fields": {
+            "code": {
+              "type": "Code",
+              "id": 1
+            }
+          },
+          "nested": {
+            "Code": {
+              "values": {
+                "OK": 0,
+                "NOT_FOUND": 1,
+                "ERROR": 2
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

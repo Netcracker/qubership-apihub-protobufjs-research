@@ -1,0 +1,21 @@
+syntax = "proto3";
+ 
+package custom_enum_options;
+ 
+import "google/protobuf/descriptor.proto";
+ 
+message EnumOption {
+    string description = 1;
+}
+ 
+message EnumValueOption {
+    bool deprecated = 1;
+}
+ 
+extend google.protobuf.EnumOptions {
+    EnumOption enum_description = 51234;
+}
+ 
+extend google.protobuf.EnumValueOptions {
+    EnumValueOption value_deprecated = 51235;
+}

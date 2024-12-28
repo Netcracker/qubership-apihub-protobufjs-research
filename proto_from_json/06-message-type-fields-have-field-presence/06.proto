@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option syntax = "proto3";
+
+message Message1 {
+}
+
+message Message2 {
+
+    Message1 foo = 1;
+}
+
+message Message3 {
+
+    oneof _bar {
+
+        Message1 bar = 1 [proto3_optional=true];
+    }
+}

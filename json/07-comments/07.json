@@ -1,0 +1,47 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "ExampleService": {
+      "methods": {
+        "GetUserData": {
+          "requestType": "SearchRequest",
+          "responseType": "UserResponse",
+          "comment": null
+        }
+      },
+      "comment": "RPC allows receiving info about the user.\nbla-bla-bla."
+    },
+    "SearchRequest": {
+      "fields": {
+        "query": {
+          "type": "string",
+          "id": 1,
+          "comment": null
+        },
+        "page_number": {
+          "type": "int32",
+          "id": 2,
+          "comment": "Which page number do we want?"
+        },
+        "results_per_page": {
+          "type": "int32",
+          "id": 3,
+          "comment": "Number of results to return per page."
+        }
+      },
+      "comment": "SearchRequest represents a search query, with pagination options to\nindicate which results to include in the response."
+    },
+    "UserResponse": {
+      "fields": {
+        "user_data": {
+          "type": "string",
+          "id": 1,
+          "comment": null
+        }
+      },
+      "comment": "Response of the search request"
+    }
+  }
+}

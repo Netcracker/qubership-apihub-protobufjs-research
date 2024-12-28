@@ -1,0 +1,70 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "user": {
+      "nested": {
+        "email": {
+          "type": "string",
+          "id": 100,
+          "extend": "User"
+        },
+        "phone_number": {
+          "type": "string",
+          "id": 101,
+          "extend": "User"
+        },
+        "ExampleResponse": {
+          "fields": {
+            "message": {
+              "type": "string",
+              "id": 1
+            },
+            "status": {
+              "type": "Status",
+              "id": 2
+            }
+          }
+        },
+        "ExampleService": {
+          "methods": {
+            "GetUser": {
+              "requestType": "User",
+              "responseType": "ExampleResponse"
+            }
+          }
+        },
+        "User": {
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            },
+            "name": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "Status": {
+          "fields": {
+            "code": {
+              "type": "Code",
+              "id": 1
+            }
+          },
+          "nested": {
+            "Code": {
+              "values": {
+                "OK": 0,
+                "NOT_FOUND": 1,
+                "ERROR": 2
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

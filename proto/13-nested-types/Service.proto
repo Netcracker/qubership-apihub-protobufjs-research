@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+package example;
+ 
+import "user.proto";
+ 
+service UserService {
+    rpc GetUser(UserRequest) returns (UserResponse);
+}
+ 
+message UserRequest {
+    string user_id = 1;
+}
+ 
+message UserResponse {
+    User user = 1;
+}

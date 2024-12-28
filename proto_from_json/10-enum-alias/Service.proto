@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package example;
+service UserService {
+    rpc GetUserRole (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+
+    string user_id = 1;
+}
+
+message UserResponse {
+
+    UserRoleAlias role = 1;
+}
+
+enum UserRole {
+
+option allow_alias = true;
+
+    USER_ROLE_UNSPECIFIED = 0;
+    USER_ROLE_ADMIN = 1;
+    USER_ROLE_USER = 2;
+}
+
+message UserRoleAlias {
+
+    UserRole role = 1;
+}

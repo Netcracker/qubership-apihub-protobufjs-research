@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option syntax = "proto3";
+
+message SearchRequest {
+
+    string query = 1;
+    bytes page_number = 2;
+    sfixed64 results_per_page = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+ 
+package example;
+import "google/protobuf/descriptor.proto";
+ 
+extend google.protobuf.FileOptions {
+  optional int32 source_retention_option = 1234
+      [retention = RETENTION_SOURCE];
+}

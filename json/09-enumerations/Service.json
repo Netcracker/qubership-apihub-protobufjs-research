@@ -1,0 +1,42 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "example": {
+      "nested": {
+        "UserService": {
+          "methods": {
+            "GetUserRole": {
+              "requestType": "UserRequest",
+              "responseType": "UserResponse"
+            }
+          }
+        },
+        "UserRequest": {
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        },
+        "UserResponse": {
+          "fields": {
+            "role": {
+              "type": "UserRole",
+              "id": 1
+            }
+          }
+        },
+        "UserRole": {
+          "values": {
+            "USER_ROLE_UNSPECIFIED": 0,
+            "USER_ROLE_ADMIN": 1,
+            "USER_ROLE_USER": 2
+          }
+        }
+      }
+    }
+  }
+}

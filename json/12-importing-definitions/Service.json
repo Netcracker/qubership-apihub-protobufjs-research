@@ -1,0 +1,79 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "example": {
+      "nested": {
+        "UserService": {
+          "methods": {
+            "GetUser": {
+              "requestType": "UserRequest",
+              "responseType": "UserResponse"
+            }
+          }
+        },
+        "UserRequest": {
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            },
+            "req_time": {
+              "type": "google.protobuf.Timestamp",
+              "id": 2
+            }
+          }
+        },
+        "UserResponse": {
+          "fields": {
+            "user": {
+              "type": "User",
+              "id": 1
+            },
+            "to_time": {
+              "type": "google.protobuf.Timestamp",
+              "id": 2
+            }
+          }
+        },
+        "User": {
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            },
+            "name": {
+              "type": "string",
+              "id": 2
+            },
+            "age": {
+              "type": "int32",
+              "id": 3
+            }
+          }
+        }
+      }
+    },
+    "google": {
+      "nested": {
+        "protobuf": {
+          "nested": {
+            "Timestamp": {
+              "fields": {
+                "seconds": {
+                  "type": "int64",
+                  "id": 1
+                },
+                "nanos": {
+                  "type": "int32",
+                  "id": 2
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

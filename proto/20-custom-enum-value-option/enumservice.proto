@@ -1,0 +1,29 @@
+syntax = "proto3";
+ 
+package example;
+ 
+import "custom_enum_options.proto";
+ 
+option java_package = "com.example.protobuf";
+option java_outer_classname = "ExampleProto";
+ 
+service ExampleService {
+    rpc GetExample (ExampleRequest) returns (ExampleResponse);
+}
+ 
+message ExampleRequest {
+    Status status = 1;
+}
+ 
+enum Status {
+    option (custom_enum_options.enum_description) = { description: "Status of the request" };
+ 
+    UNKNOWN = 0 [(custom_enum_options.value_deprecated) = { deprecated: true }];
+    OK = 1;
+    ERROR = 2;
+}
+ 
+message ExampleResponse {
+    string message = 1;
+    Status status = 2;
+}

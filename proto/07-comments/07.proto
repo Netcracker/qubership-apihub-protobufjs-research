@@ -1,0 +1,21 @@
+syntax="proto3";
+ 
+/* RPC allows receiving info about the user.
+ * bla-bla-bla. */
+service ExampleService {
+    rpc GetUserData(SearchRequest) returns (UserResponse);
+}
+  
+/* SearchRequest represents a search query, with pagination options to
+ * indicate which results to include in the response. */
+message SearchRequest {
+  string query = 1;
+  int32 page_number = 2;  // Which page number do we want?
+  int32 results_per_page = 3;  // Number of results to return per page.
+}
+ 
+ 
+// Response of the search request
+message UserResponse {
+    string user_data = 1;
+}

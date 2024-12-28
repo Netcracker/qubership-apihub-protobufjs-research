@@ -1,0 +1,47 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "chat": {
+      "nested": {
+        "ChatService": {
+          "methods": {
+            "Chat": {
+              "requestType": "ChatMessage",
+              "requestStream": true,
+              "responseType": "ChatMessage",
+              "responseStream": true
+            },
+            "DeprecatedChat": {
+              "requestType": "ChatMessage",
+              "requestStream": true,
+              "responseType": "ChatMessage",
+              "responseStream": true,
+              "options": {
+                "deprecated": true
+              },
+              "parsedOptions": [
+                {
+                  "deprecated": true
+                }
+              ]
+            }
+          }
+        },
+        "ChatMessage": {
+          "fields": {
+            "user": {
+              "type": "string",
+              "id": 1
+            },
+            "message": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}

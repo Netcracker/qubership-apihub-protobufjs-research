@@ -1,0 +1,29 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "example": {
+      "nested": {
+        "UserRole": {
+          "options": {
+            "allow_alias": true
+          },
+          "values": {
+            "USER_ROLE_UNSPECIFIED": 0,
+            "USER_ROLE_ADMIN": 1,
+            "USER_ROLE_USER": 2
+          }
+        },
+        "UserRoleAlias": {
+          "fields": {
+            "role": {
+              "type": "UserRole",
+              "id": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

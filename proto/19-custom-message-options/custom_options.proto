@@ -1,0 +1,14 @@
+syntax = "proto3";
+ 
+package custom_options;
+ 
+import "google/protobuf/descriptor.proto";
+ 
+message CustomMessageOption {
+    string description = 1;
+    int32 priority = 2;
+}
+ 
+extend google.protobuf.MessageOptions {
+    CustomMessageOption custom_option = 51234;
+}

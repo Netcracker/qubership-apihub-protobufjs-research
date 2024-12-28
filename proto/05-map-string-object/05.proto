@@ -1,0 +1,20 @@
+syntax = "proto3";
+ 
+service ExampleService {
+    rpc GetUserData(UserRequest) returns (UserResponse);
+}
+ 
+message UserRequest {
+    string user_id = 1;
+    string email = 2; 
+    string hobbies = 3;
+}
+ 
+message User {
+    string user_id = 1;
+    string email = 2; 
+}
+ 
+message UserResponse {
+    map<string, User> user_data = 1;
+}

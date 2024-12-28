@@ -1,0 +1,52 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "user": {
+      "nested": {
+        "UserProfile": {
+          "oneofs": {
+            "contact_info": {
+              "oneof": [
+                "email",
+                "phone_number",
+                "address"
+              ]
+            }
+          },
+          "fields": {
+            "user_id": {
+              "type": "string",
+              "id": 1
+            },
+            "name": {
+              "type": "string",
+              "id": 2
+            },
+            "email": {
+              "type": "string",
+              "id": 3
+            },
+            "phone_number": {
+              "type": "string",
+              "id": 4
+            },
+            "address": {
+              "type": "string",
+              "id": 5
+            }
+          }
+        },
+        "UserService": {
+          "methods": {
+            "CreateUser": {
+              "requestType": "UserProfile",
+              "responseType": "UserProfile"
+            }
+          }
+        }
+      }
+    }
+  }
+}

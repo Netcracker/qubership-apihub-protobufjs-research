@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option syntax = "proto3";
+service ExampleService {
+    rpc GetUserData (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+
+    oneof _email {
+
+        string email = 2 [proto3_optional=true];
+    }
+
+    string user_id = 1;
+}
+
+message UserResponse {
+
+    string user_data = 1;
+}

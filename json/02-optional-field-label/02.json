@@ -1,0 +1,45 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "ExampleService": {
+      "methods": {
+        "GetUserData": {
+          "requestType": "UserRequest",
+          "responseType": "UserResponse"
+        }
+      }
+    },
+    "UserRequest": {
+      "oneofs": {
+        "_email": {
+          "oneof": [
+            "email"
+          ]
+        }
+      },
+      "fields": {
+        "user_id": {
+          "type": "string",
+          "id": 1
+        },
+        "email": {
+          "type": "string",
+          "id": 2,
+          "options": {
+            "proto3_optional": true
+          }
+        }
+      }
+    },
+    "UserResponse": {
+      "fields": {
+        "user_data": {
+          "type": "string",
+          "id": 1
+        }
+      }
+    }
+  }
+}
